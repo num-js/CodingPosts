@@ -6,4 +6,8 @@
 
 4-> git commit -m "Initial Commit"  //To Commit Files
 
-5-> 
+5-> git remote add origin https://github.com/mdnmnahmed/CodingPosts.git     //To connect with the GitHub Repo
+
+6-> git push origin master  //To Push the files to github Repo
+
+7-> 
