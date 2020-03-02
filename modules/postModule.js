@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 moment = require('moment');
 
-mongoose.connect('mongodb+srv://na4085494:nah123MLAB@codingposts-o9kjj.mongodb.net/posts_db?retryWrites=true&w=majority', {
 // mongoose.connect('mongodb://localhost:27017/posts_db', {
+mongoose.connect('mongodb+srv://na4085494:nah123MLAB@codingposts-o9kjj.mongodb.net/posts_db?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
