@@ -68,7 +68,7 @@ router.post('/savepost', function(req, res, next){
       var ext = path.extname(file.originalname);
       if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
         res.render('wrong_file_upload', {error: 'Only images are allowed [png, jpg, jpeg, gif]', cp_email: ''});   
-        console.log('Only images are allowed');
+        // console.log('Only images are allowed');
         return callback(new Error('Only images are allowed'))
       }
       callback(null, true)
@@ -306,7 +306,7 @@ router.post('/updatePost', function(req, res, next){
       var ext = path.extname(file.originalname);
       if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
         res.render('wrong_file_upload', {success: 'Only images are allowed [png, jpg, jpeg, gif]'});   
-        console.log('Only images are allowed');
+        // console.log('Only images are allowed');
         return callback(new Error('Only images are allowed'))
       }
       callback(null, true)
