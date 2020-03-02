@@ -2,4 +2,8 @@
 
 2-> git status  //To Check the Git Status it'll show untracked files
 
-3-> git add -A  //To 
+3-> git add -A  //To Add to the Stage Area
+
+4-> git commit -m "Initial Commit"  //To Commit Files
+
+5-> 
