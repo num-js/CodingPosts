@@ -1,0 +1,5 @@
+1-> git init    //To Initialize the Empty Git Repo
+
+2-> git status  //To Check the Git Status it'll show untracked files
+
+3-> git add -A  //To 

@@ -1,0 +1,126 @@
+
+
+  <% include header%>
+
+
+
+<div class="container ">
+    <div align="center" >
+      <div class=" col-lg-6 col-sm-12">
+        <form action="/search" method="POST">
+          <div class="d-table-cell w-100">
+            <input class="form-control" name="postName" placeholder="Search">
+          </div>
+          <div class="d-table-cell align-middle">
+              <button class="btn btn-primary">Search</button>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+<br>
+            <!-- MODAL -->
+    <div>
+      <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#writePosts">
+        Write Posts
+      </button>
+    </div>
+      <!-- The Modal -->
+      <div class="modal col-lg-12 col-sm-12" id="writePosts">
+        <div class="modal-dialog">
+          <div class="modal-content jumbotron col-lg-12" style="padding: 10px; background: #e9ecef">
+        <center>
+        
+          <div class="">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+            <br>
+            <h4><u>Write Posts</u></h4>
+            <% if(cp_email==''){%>
+              <span class="bg-dark text-danger"> If you are not Logged in, Please Login before Writing Post... Otherwise you can't Edit/Delete your Post &nbsp;</span>
+              <a href="/login" class="btn-primary btn-sm"><small><i class="fa fa-user"></i></small> Login</a>
+              <br>
+              <br>
+            <% }%>
+            <a href="/openEditorWindow" class="btn btn-dark btn-sm float-right">Open Editor Window</a> <br>
+						<form action="/savepost" method="post" class="form" enctype="multipart/form-data">
+              
+              <label style="float:left">Post Title</label>
+              <input class="form-control" type="text" name="topic" placeholder="Post Topic"> 
+              <br>
+
+              <label style="float:left">Choose a Pic for Thumbnail &nbsp;</label>
+              <input type="file" name="post_pic" placeholder="Picture">
+              <br>
+              <br>
+
+              <label style="float:left">Post Topic Summary</label>
+              <input class="form-control" type="text" name="summary" placeholder="A small Description of the Topic"> <br>
+
+              <label style="float:left">Post Description</label><br>
+              <textarea rows="6" class="form-control" name="description" placeholder="Write your Post here..."></textarea>
+
+              <br>
+              <label style="float:left">Post Category/Keyword</label>
+              <input class="form-control" type="text" name="category" placeholder="Post Category/Keyword"> <br>
+              
+              <input type="submit" name="savepost" value="Save Post" class="btn btn-success">
+						</form>
+					</div>
+        </center>
+          </div>
+        </div>
+      </div>
+      
+      
+    <center>
+      <% if(success != ''){ %>
+        <div class="alert alert-success col-lg-3 col-sm-4 text-center">
+          <%= success %>
+        </div>
+      <% } %>
+    </center>
+
+<br>
+<br> 
+  
+
+
+
+    <div class="row">
+    <% records.forEach(function(row){ %>
+          <!-- Post Div Start-->
+      <div class="col-sm-4">
+        <div class="card bg-muted">
+      <a href="/viewpost/<%= row._id %>" style="text-decoration: none;">
+
+          <b class="card-title text-dark"><%= row.topic%></b>
+          <% if(row.post_pic){ %>
+            <img class="card-img-top img" src="./post_pic/<%= row.post_pic %>" alt="<%= row.topic%>" height="250">
+          <% } %>
+            <div class="card-block">
+                <p class="card-text"><%= row.summary %></p>
+                <!-- <p class="card-text"><small class="text-muted"><%= row.date %> --> 
+                <p class="card-text"><small class="text-muted">
+                  <%= row.date %>  
+                  <span style="float: right">by <%= row.postsBy%> &nbsp;</span></small>
+                </p>
+            </div>
+      </a>
+        </div>
+        <br>
+      </div>
+          <!--Post Div End-->
+    <% }); %>
+    </div>
+
+</div>
+  
+
+
+<br>
+
+
+
+
+<% include footer%>
+

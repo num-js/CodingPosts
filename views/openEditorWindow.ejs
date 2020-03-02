@@ -1,0 +1,36 @@
+
+<% include header%>
+
+<center>
+  <div class="">
+    <div class="jumbotron col-lg-8 col-sm-12" style="padding: 10px;">
+            <!--Update Form -->
+      <form action="/savepost" method="post" class="form" enctype="multipart/form-data">
+        <div>
+          <label style="float:left">Post Title</label>
+          <input class="form-control" type="text" name="topic" placeholder="Post Topic">
+        </div>
+        
+        <br>
+
+        <label style="float:left">Upload new Pic for Thumbnail </label>
+        <input type="file" name="post_pic" placeholder="Picture">
+        <br>
+        <br>
+        <label style="float:left">Post Topic Summary</label>
+        <input class="form-control" type="text" name="summary" placeholder="A small Description of the Topic"> <br>
+
+        <label style="float:left">Post Description</label><br>
+        <textarea rows="6" class="form-control" name="description" placeholder="Write your Post here..."></textarea>  <br>        
+        
+        <label style="float:left">Post Category/Keyword</label>
+        <input class="form-control" type="text" name="category" placeholder="Post Category/Keyword"> <br>
+        
+        <input type="submit" name="savepost" value="Save Post" class="btn btn-success">
+      </form>
+    </div>
+  </div>
+</center>
+
+
+<% include footer%>
