@@ -1,0 +1,44 @@
+
+<% include header%>
+
+<center>
+<br>
+<br>
+
+    <% if(success != ''){ %>
+    <div class="alert alert-success col-lg-3 col-sm-4 text-center">
+      <%= success %>
+    </div>
+    <% } %>
+
+  <div class="container">
+    <div class="jumbotron col-lg-4 col-sm-10" style="padding: 10px;">
+        <h3>Register</h3>
+      <form action="/register" method="post" class="form">
+        <label style="float:left">Name</label>
+        <input class="form-control" type="name" name="name" placeholder="Name" pattern="^[a-zA-Z\s]+$" title="Enter Characters only" required>
+        
+        <label style="float:left">Email</label>
+        <input class="form-control" type="email" name="email" placeholder="Email" required>
+         
+        <label style="float:left">Password</label>
+        <input class="form-control" type="password" name="password" placeholder="Password" required>
+        
+        <label style="float:left">Confirm Password</label>
+        <input class="form-control" type="password" name="confpassword" placeholder="Password" required>
+        
+        <br>
+        
+        <input type="submit" name="register" value="Register" class="btn btn-success">
+        <br>
+        alredy have account <a href="/login">Login</a>
+      </form>
+    </div>
+  </div>
+
+</center>
+
+<br>
+<br>
+<br>
+<% include footer%>

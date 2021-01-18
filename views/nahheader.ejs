@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><{CODINGPOSTS}></title>
+    <link rel="icon" href="https://raw.githubusercontent.com/mdnmnahmed/portfolio/master/images/nlogo.jpg">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet"> 
+  </head>
+  <body">
+    <div class="bg-dark">
+      <div style="float:left">
+        <% if(cp_email_nah){ %>
+          <a style="text-decoration: none; color: red;" href=""><b><%=cp_email_nah.name%></b></a>
+        <% } %>
+      </div>
+      <div style="float:right">
+        <% if(cp_email_nah){ %>
+          <a href="/nahlogout" class="btn btn-danger"><i class="fa fa-sign-out"></i></a>
+        <% }else{ %>
+          <a href="/login" class="btn btn-danger"><i class="fa fa-user"></i></a>
+        <% } %>
+      </div>
+      <h2 class="text-center" style="font-family: 'akronim', cursive; cursor: pointer; color: white;">
+        <{CODINGPOSTS}>
+      </h2>
+    </div>

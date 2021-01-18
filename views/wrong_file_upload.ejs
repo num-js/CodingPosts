@@ -1,0 +1,11 @@
+<% include header%>
+    <!-- Alert Message -->
+    <center>
+    <% if(error != ''){ %>
+        <br>
+        <br>
+        <div class="alert alert-danger col-lg-6 col-sm-10 text-center">
+        <H3 style="color: red;"><%= error %></H3>
+        </div>
+    <% } %>
+    </center>

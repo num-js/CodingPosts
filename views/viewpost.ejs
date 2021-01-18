@@ -1,0 +1,55 @@
+
+<% include header%>
+
+<center>
+
+    
+  
+
+  <div class="">
+    <div class="jumbotron col-lg-10 col-sm-12" style="padding: 10px;">
+            <!--Post Topic -->
+        <div>
+          <% if(row.postsByEmail == cp_email.email){ %>
+            <div style="float: right;" class="d-inline">
+              <form action="/deletePost" method="POST">
+                <a href="/edit/<%= row._id %>" class="btn btn-sm btn-primary"><span class="fa fa-edit"></span></a>
+
+                <input type="hidden" name="postId" value="<%= row.id%>">
+                <input type="hidden" name="imgPath" value="<%= row.post_pic%>">
+                <button type="submit" class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></a>
+              </form>
+              
+            </div>
+          <%}%>
+          <h4 class="card-title text-dark"><b><%= row.topic%></b></h4>
+        </div>
+        
+            <!--Post Pic -->
+        <% if(row.post_pic){ %>
+            <img class="card-img-top img" src="./../post_pic/<%= row.post_pic %>" alt="<%= row.topic%>" width="60%" >
+          <% } %>
+
+            <!--Post Summary -->
+        <div align="left">
+            <br>
+            <%= row.summary%>
+            <br>
+            <br>
+            <pre wrap="hard"><span style="font-size: large;"><%= row.description%></span></pre>
+        </div>
+
+        <br>
+        
+        <p class="card-text text-left"><small class="text-muted"><%=row.date%>
+          <span style="float: right">by <%= row.postsBy%> &nbsp;</span></small>
+          &nbsp;<span align="center" class="text-center btn-secondary btn-sm"><%=row.category%></span>
+        </p>
+
+    </div>
+  </div>
+
+</center>
+
+
+<% include footer%>

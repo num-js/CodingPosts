@@ -1,0 +1,75 @@
+
+
+  <% include nahheader%>
+
+
+
+<div class="container ">
+    <div align="center" >
+      <div class=" col-lg-6 col-sm-12">
+        <form action="/nahsearch" method="POST">
+          <div class="d-table-cell w-100">
+            <input class="form-control" name="postName" placeholder="Search">
+          </div>
+          <div class="d-table-cell align-middle">
+              <button class="btn btn-primary">Search</button>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+<br>
+      
+      
+    <center>
+      <% if(success != ''){ %>
+        <div class="alert alert-success col-lg-3 col-sm-4 text-center">
+          <%= success %>
+        </div>
+      <% } %>
+    </center>
+
+<br>
+<br> 
+  
+
+
+
+    <div class="row">
+    <% records.forEach(function(row){ %>
+          <!-- Post Div Start-->
+      <div class="col-sm-4">
+        <div class="card bg-muted">
+      <a href="/nahviewpost/<%= row._id %>" style="text-decoration: none;">
+
+          <b class="card-title text-dark"><%= row.topic%></b>
+          <% if(row.post_pic){ %>
+            <img class="card-img-top img" src="./post_pic/<%= row.post_pic %>" alt="<%= row.topic%>" height="250">
+          <% } %>
+            <div class="card-block">
+                <p class="card-text"><%= row.summary %></p>
+                <!-- <p class="card-text"><small class="text-muted"><%= row.date %> --> 
+                <p class="card-text"><small class="text-muted">
+                  <%= row.date %>  
+                  <span style="float: right">by <%= row.postsBy%> &nbsp;</span></small>
+                </p>
+            </div>
+      </a>
+        </div>
+        <br>
+      </div>
+          <!--Post Div End-->
+    <% }); %>
+    </div>
+
+</div>
+  
+
+
+<br>
+
+
+
+
+<% include footer%>
+
