@@ -1,6 +1,6 @@
 1. Time and Date    //Done
-2. Rich Text Box       //Not 4 this Project
+2. Rich Text Box       //Later
 3. Searching Posts     //Done
-4. Error Messages in Red Box    //Later
+4. Toasted Error Messages    //Later
 5. Delete Image File with post Delete   //Done
 6. Only Images Available    //Done
